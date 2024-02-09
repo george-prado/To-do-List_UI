@@ -12,11 +12,13 @@
 </ul>
 
 <div id="modal" *ngIf="mode == 'add'" class="animate__animated animate__flipInX">
+  
   <h1 class="text-center">Nova Tarefa</h1>
+  
   <form [formGroup]="form">
       <input type="text" placeholder="Título da Tarefa" maxlength="60" formControlName="title"/>
       <small class="danger" *ngIf="form.controls['title'].invalid && !form.controls['title'].pristine">
-        Esse campo deve conter entre 3 e 60 caracteres
+        Campo obrigatório
       </small>
       <p class="text-center">
         <button class="button" [disabled]="form.invalid" (click)="add()">
@@ -24,8 +26,11 @@
           Salvar
         </button>
       </p>
+      <br>
   </form>
+  
   <br>
+
 </div>
 
 <button

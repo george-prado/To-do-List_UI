@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
+
 export class AppComponent {
   public mode: string = 'list';
   public todos: Todo[] = [];
@@ -18,7 +19,7 @@ export class AppComponent {
       title: [
         '',
         Validators.compose([
-          Validators.minLength(3),
+          Validators.minLength(1),
           Validators.maxLength(40),
           Validators.required,
         ]),
@@ -67,8 +68,13 @@ export class AppComponent {
   }
 
   load() {
-    const data = localStorage.getItem('todos') ?? '';
-    this.todos = JSON.parse(data);
+    const data = localStorage.getItem('todos') ?? '[]';
+
+    try {
+      this.todos = JSON.parse(data);
+    } catch (error) {
+      console.error('Erro ao fazer parsing do JSON:', error);
+    }
   }
 
   changeMode(mode:string) {

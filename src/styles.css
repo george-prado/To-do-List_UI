@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font: normal 300 1em 'Montserrat', sans-serif;
+    font: normal 400 1em 'Montserrat', sans-serif;
 
     background: #3023ae;
     background: linear-gradient(60deg, #3023ae 0%, #c86dd7 100%);
@@ -28,7 +28,6 @@ li {
     padding: 15px;
     margin: 10px;
     font-size: 1em;
-    font-style: italic;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -37,7 +36,7 @@ li>button {
     background-color: #fff;
     font-size: 1em;
     float: right;
-    opacity: .6;
+    opacity: .8;
     transition: opacity .4s;
 }
 
@@ -53,7 +52,7 @@ button {
 .title {
     font: normal 400 5em 'Dancing Script', cursive;
     color: #fff;
-    text-shadow: 3px 4px #000;
+    text-shadow: 3px 3px #000;
 }
 
 .text-center {
